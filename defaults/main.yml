@@ -4,3 +4,4 @@ win_drivers_rutoken_etoken_files: "{{ role_path }}/files"
 win_drivers_rutoken_etoken_copy_path: 'C:\temp\drivers\'
 win_drivers_rutoken_etoken_et: PKIClient_x64_5.1_SP1.msi
 win_drivers_rutoken_etoken_rt: rtDrivers.exe
+win_drivers_rutoken_etoken_et_install: False

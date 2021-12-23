@@ -9,19 +9,20 @@
     - "{{ win_drivers_rutoken_etoken_et }}"
     - "{{ win_drivers_rutoken_etoken_rt }}"
 
-- name: win_drivers_rutoken_etoken | Install Driver eToken
-  win_package:
-    path: "{{ win_drivers_rutoken_etoken_copy_path }}{{ win_drivers_rutoken_etoken_et }}"
-    product_id: '{BC5C2BEB-87AF-4636-9184-CA10C3C740B8}'
-    arguments: '/quiet /norestart'
-    state: present
-
 - name: win_drivers_rutoken_etoken | Install Driver Rutoken
   win_package:
     path: "{{ win_drivers_rutoken_etoken_copy_path }}{{ win_drivers_rutoken_etoken_rt }}"
     product_id: '{8F86CB5E-1982-4405-87DA-E7B63A038018}'
     arguments: '/S /v /qn'
     state: present
+
+- name: win_drivers_rutoken_etoken | Install Driver eToken
+  win_package:
+    path: "{{ win_drivers_rutoken_etoken_copy_path }}{{ win_drivers_rutoken_etoken_et }}"
+    product_id: '{BC5C2BEB-87AF-4636-9184-CA10C3C740B8}'
+    arguments: '/quiet /norestart'
+    state: present
+  when: win_drivers_rutoken_etoken_et_install == true
 
 - name: win_drivers_rutoken_etoken | Remove directory temp
   win_file:

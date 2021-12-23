@@ -14,6 +14,8 @@ Role Variables
 --------------
 
 Доступные переменные перечислены вместе со значениями по умолчанию (см. `defaults/main.yml`).
+Для установки драйвера eToken задайте значение переменной:
+  win_drivers_rutoken_etoken_et_install: True
 
 Dependencies
 ------------
